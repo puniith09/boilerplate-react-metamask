@@ -25,7 +25,7 @@ const MetamaskContext = React.createContext<Values>(initialValues);
 const MetamaskProvider = ({ children }: any) => {
   const [contract, setContract] = React.useState<any>();
   const [user, setUser] = React.useState<User>({
-		address: window.ethereum.selectedAddress,
+		address: window.ethereum ? window.ethereum.selectedAddress : "",
 		isConnected: false,
 		balance: 0,
 	});
